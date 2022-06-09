@@ -1,0 +1,1 @@
+export const GET_SLIDER_ITEMS = "GET_SLIDER_ITEMS";

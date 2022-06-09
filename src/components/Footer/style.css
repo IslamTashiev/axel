@@ -1,0 +1,74 @@
+.footer {
+  padding: 25px 0;
+  background: #3f79ea;
+  margin-top: 70px;
+}
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__item {
+  width: 50%;
+}
+.footer__item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 206px;
+}
+.logo {
+  font-family: "Bangers";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 47px;
+  letter-spacing: 0.26em;
+  color: #ffffff;
+}
+.footer__item-title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+.footer__contacts-item {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+.footer__item-nav {
+  max-width: 280px;
+  width: 100%;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.footer__item-nav .footer__item-title {
+  border-bottom: 2px solid white;
+  margin-bottom: 20px;
+}
+.footer__item-nav .header__menu .header__menu-list {
+  flex-direction: column;
+  gap: 10px;
+}
+.footer__item-nav .header__menu .header__menu-list .header__menu-item {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+.footer__item.first {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
