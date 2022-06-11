@@ -1,16 +1,11 @@
 .promotions__content {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: 200px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px 200px;
   grid-gap: 10px;
   margin-bottom: 10px;
 }
-.promotions__content.second {
-  grid-template-columns: 1fr 1.5fr;
-}
 .promotion {
-  /* width: auto;
-  height: 100%; */
   background: #f8f8f8;
   border: 1px solid #d8d8d8;
   border-radius: 10px;

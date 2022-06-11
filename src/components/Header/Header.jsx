@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../Button/Button";
 import { Menu } from "./Menu";
 import { Nav } from "./Nav";
 import "./style.css";
@@ -14,7 +15,7 @@ export const Header = () => {
             <div className='auth__method'>
               <div className='login'>Login</div>
               or
-              <div className='signin btn'>Sign in</div>
+              <Button text='Sign in' defaultClassName='signin' />
             </div>
           </div>
         </div>

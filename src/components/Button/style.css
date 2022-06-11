@@ -1,0 +1,35 @@
+.btn {
+  background: #3f79ea;
+  border-radius: 10px;
+  padding: 8px 23px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+}
+.btn:hover {
+  background-color: #3d6dce;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn.outline {
+  background-color: transparent;
+  border: 2px solid #3f79ea;
+  color: #3f79ea;
+}
+.btn.outline:hover {
+  background: #3f79ea;
+  color: #fff;
+}
+
+.btn.with__img {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn.with__img:hover img {
+  transition: all 0.3s ease;
+  transform: translateX(5px);
+}

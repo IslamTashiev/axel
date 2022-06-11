@@ -1,7 +1,8 @@
-import { GET_SLIDER_ITEMS } from "../types";
+import { GET_PRODUCTS, GET_SLIDER_ITEMS } from "../types";
 
 const INITiAL_STATE = {
   sliderItems: [],
+  products: [],
 };
 
 export const dataReducer = (state = INITiAL_STATE, action) => {
@@ -10,6 +11,11 @@ export const dataReducer = (state = INITiAL_STATE, action) => {
       return {
         ...state,
         sliderItems: action.payload,
+      };
+    case GET_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload,
       };
 
     default:

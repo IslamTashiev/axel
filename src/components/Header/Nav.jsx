@@ -50,13 +50,13 @@ export const Nav = () => {
               <div className='search__btn'>
                 <img src={searchIcon} />
                 <p>Search</p>
-                <form onSubmit={handleClick}>
+                {/* <form onSubmit={handleClick}>
                   <input
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     type='text'
                   />
-                </form>
+                </form> */}
               </div>
               {/* <CatologDropdown /> */}
             </div>

@@ -2,20 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import arrowIcon from "../../assets/arrow-active.svg";
 import cartIcon from "../../assets/cart-active.svg";
-import img from "../../assets/commo.png";
 
-export const ProductItem = () => {
+export const ProductItem = ({ product }) => {
+  const description = product.description.substring(0, 100) + "...";
+
   return (
     <div className='product__item'>
-      <img className='product__image' src={img} alt='product-image' />
+      <img
+        className='product__image'
+        src={product.imageURL}
+        alt='product-image'
+      />
       <div className='product__info'>
-        <h4 className='product__title'>Comotomo silicone bottle</h4>
-        <p className='product__description'>
-          This product is made from the finest silicone. Silicone per...
-        </p>
-        <div className='product__price'>1750 сом</div>
+        <h4 className='product__title'>{product.title}</h4>
+        <p className='product__description'>{description}</p>
+        <div className='product__price'>{product.price} сом</div>
         <div className='product__item-links'>
-          <Link className='product__item-link' to='/'>
+          <Link className='product__item-link' to={`/product/${product.id}`}>
             Show More
             <img src={arrowIcon} />
           </Link>

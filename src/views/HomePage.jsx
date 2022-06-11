@@ -9,9 +9,9 @@ export const HomePage = () => {
   return (
     <div className='wrapper'>
       <Header />
-      <Promotions />
       <Hero />
       <ProductList />
+      <Promotions />
       <Footer />
     </div>
   );

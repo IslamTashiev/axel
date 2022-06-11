@@ -3,6 +3,7 @@ import arrowIcon from "../../assets/arrow.svg";
 import cartIcon from "../../assets/cart.svg";
 import chevronleftIcon from "../../assets/chevron-left.svg";
 import chevronrightIcon from "../../assets/chevron-right.svg";
+import { Button } from "../Button/Button";
 
 export const HeroContent = (props) => {
   const { setSelectedItem, selectedItem, slide, sliderItems } = props;
@@ -23,12 +24,18 @@ export const HeroContent = (props) => {
         <h5 className='hero__subtitle'>{slide.description}</h5>
         <div className='hero__price'>{slide.price} com</div>
         <div className='hero__buttons'>
-          <div className='hero__btn btn'>
-            See More <img src={arrowIcon} />
-          </div>
-          <div className='hero__btn btn'>
-            Add to cart <img src={cartIcon} />
-          </div>
+          <Button
+            text='See More'
+            defaultClassName='hero__btn'
+            withImage={true}
+            imgSrc={arrowIcon}
+          />
+          <Button
+            text='Add to cart'
+            defaultClassName='hero__btn'
+            withImage={true}
+            imgSrc={cartIcon}
+          />
         </div>
         <div className='slider__selectors'>
           <div className='selected__items'>

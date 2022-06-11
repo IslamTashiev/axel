@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../../store/actions/actions";
+import { Title } from "../Title/Title";
 import { ProductItem } from "./ProductItem";
 import "./style.css";
 
 export const ProductList = () => {
+  const dispatch = useDispatch();
+  const { products } = useSelector((state) => state.data);
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
+
   return (
     <div className='products'>
       <div className='container'>
-        <h3 className='products__title'>New arivals</h3>
+        <Title text='New arivals' />
+
         <div className='products__content'>
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
+          {products.length ? (
+            products.map((product) => <ProductItem product={product} />)
+          ) : (
+            <>Loading...</>
+          )}
         </div>
       </div>
     </div>

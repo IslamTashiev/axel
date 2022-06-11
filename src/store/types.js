@@ -1,1 +1,2 @@
 export const GET_SLIDER_ITEMS = "GET_SLIDER_ITEMS";
+export const GET_PRODUCTS = "GET_PRODUCTS"

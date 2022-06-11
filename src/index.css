@@ -16,16 +16,3 @@
   justify-content: space-between;
   height: 100vh;
 }
-.btn {
-  background: #3f79ea;
-  border-radius: 10px;
-  padding: 8px 23px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.btn:hover {
-  background-color: #3d6dce;
-}
-.btn:active {
-  transform: translateY(1px);
-}
