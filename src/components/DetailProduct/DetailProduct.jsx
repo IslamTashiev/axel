@@ -11,6 +11,7 @@ export const DetailProduct = () => {
     <div className='detail__page'>
       <div className='container'>
         <Bradcrumb
+          char='>'
           items={[
             "Product",
             detailProduct ? detailProduct.title : "Loading...",

@@ -6,6 +6,7 @@ import { store } from "./store";
 import App from "./App";
 import "./index.css";
 import { Routes } from "./Routes";
+import { Modals } from "./components/Modals/Modals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,6 +14,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <App />
+        <Modals />
       </Routes>
     </BrowserRouter>
   </Provider>,
