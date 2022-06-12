@@ -69,3 +69,63 @@
   display: flex;
   gap: 25px;
 }
+.feedback {
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  gap: 20px;
+  padding: 25px 60px;
+}
+.current__user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+.feedback__btn {
+  max-width: 215px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+.feedback__item {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  gap: 20px;
+}
+
+.review__list {
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 20px 60px 0;
+  margin-top: 30px;
+}
+.review__list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d9d9d9;
+  margin-bottom: 20px;
+}
+.review__author {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #3f79ea;
+}
+.review__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 5px;
+  color: #000000;
+}
