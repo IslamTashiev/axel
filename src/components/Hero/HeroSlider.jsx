@@ -5,56 +5,20 @@ import { HeroContent } from "./HeroContent";
 import "react-awesome-slider/dist/styles.css";
 import { useSelector } from "react-redux";
 
-// const sliderItems = [
-//   {
-//     id: 1,
-//     title: "Comotomo silicone bottle",
-//     description:
-//       "This product is made from the finest silicone. Silicone perfectly conducts and retains heat, which allows the baby to continuously feel maternal care.",
-//     price: 1750,
-//     imageURL: commoImg,
-//     page: 0,
-//   },
-//   {
-//     id: 2,
-//     title: "Comotomo silicone bottle 1",
-//     description:
-//       "This product is made from the finest silicone. Silicone perfectly conducts and retains heat, which allows the baby to continuously feel maternal care.",
-//     price: 1750,
-//     imageURL: commoImg,
-//     page: 1,
-//   },
-//   {
-//     id: 3,
-//     title: "Comotomo silicone bottle 2",
-//     description:
-//       "This product is made from the finest silicone. Silicone perfectly conducts and retains heat, which allows the baby to continuously feel maternal care.",
-//     price: 1750,
-//     imageURL: commoImg,
-//     page: 2,
-//   },
-//   {
-//     id: 4,
-//     title: "Comotomo silicone bottle 3",
-//     description:
-//       "This product is made from the finest silicone. Silicone perfectly conducts and retains heat, which allows the baby to continuously feel maternal care.",
-//     price: 1750,
-//     imageURL: commoImg,
-//     page: 3,
-//   },
-//   {
-//     id: 5,
-//     title: "Comotomo silicone bottle 4",
-//     description:
-//       "This product is made from the finest silicone. Silicone perfectly conducts and retains heat, which allows the baby to continuously feel maternal care.",
-//     price: 1750,
-//     imageURL: commoImg,
-//     page: 4,
-//   },
-// ];
+import chevronleftIcon from "../../assets/chevron-left.svg";
+import chevronrightIcon from "../../assets/chevron-right.svg";
 
 export const HeroSlider = () => {
   const [selectedItem, setSelectedItem] = useState(0);
+
+  const nextSlide = () => {
+    if (selectedItem === sliderItems.length - 1) return;
+    setSelectedItem(selectedItem + 1);
+  };
+  const prevSlide = () => {
+    if (selectedItem === 0) return;
+    setSelectedItem(selectedItem - 1);
+  };
 
   const { sliderItems } = useSelector((state) => state.data);
 
@@ -63,15 +27,36 @@ export const HeroSlider = () => {
       <AwesomeSlider selected={selectedItem} buttons={false}>
         {sliderItems.map((item) => (
           <div key={item.id}>
-            <HeroContent
-              slide={item}
-              selectedItem={selectedItem}
-              setSelectedItem={setSelectedItem}
-              sliderItems={sliderItems}
-            />
+            <HeroContent slide={item} />
           </div>
         ))}
       </AwesomeSlider>
+      <div className='slider__selectors'>
+        <div className='selected__items'>
+          {sliderItems.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => setSelectedItem(item.page)}
+              className='selected__item'>
+              <div className='outline'>
+                <img className='selected__item-img' src={item.imageURL} />
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className='slider__buttons'>
+          <img
+            onClick={prevSlide}
+            className='arrow left'
+            src={chevronleftIcon}
+          />
+          <img
+            onClick={nextSlide}
+            className='arrow right'
+            src={chevronrightIcon}
+          />
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,11 +1,18 @@
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  orderBy,
+  query,
+} from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { GET_PRODUCTS, GET_PRODUCT_BY_ID, GET_SLIDER_ITEMS } from "../types";
 
 export const getSliderItems = () => {
   return async (dispatch) => {
-    const ref = collection(db, "sliderItems");
-    const itemsSnapshot = await getDocs(ref);
+    const q = query(collection(db, "sliderItems"), orderBy("page"));
+    const itemsSnapshot = await getDocs(q);
 
     const data = itemsSnapshot.docs.map((slide) => ({
       ...slide.data(),

@@ -20,7 +20,9 @@ export const ProductList = () => {
 
         <div className='products__content'>
           {products.length ? (
-            products.map((product) => <ProductItem product={product} />)
+            products.map((product) => (
+              <ProductItem key={product.id} product={product} />
+            ))
           ) : (
             <>Loading...</>
           )}
