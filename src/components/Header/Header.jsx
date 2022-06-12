@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../Button/Button";
+import { Logo } from "../Logo/Logo";
 import { Menu } from "./Menu";
 import { Nav } from "./Nav";
 import "./style.css";
@@ -9,7 +10,7 @@ export const Header = () => {
     <div className='header'>
       <div className='container'>
         <div className='header__content'>
-          <div className='header__logo'>AXEL</div>
+          <Logo />
           <Menu />
           <div className='header__control'>
             <div className='auth__method'>

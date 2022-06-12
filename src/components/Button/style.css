@@ -6,6 +6,8 @@
   transition: all 0.2s ease;
   border: none;
   outline: none;
+  color: #fff;
+  width: 100%;
 }
 .btn:hover {
   background-color: #3d6dce;
@@ -17,6 +19,7 @@
   background-color: transparent;
   border: 2px solid #3f79ea;
   color: #3f79ea;
+  border-radius: 10px;
 }
 .btn.outline:hover {
   background: #3f79ea;

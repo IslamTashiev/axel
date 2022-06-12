@@ -1,6 +1,6 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/config";
-import { GET_PRODUCTS, GET_SLIDER_ITEMS } from "../types";
+import { GET_PRODUCTS, GET_PRODUCT_BY_ID, GET_SLIDER_ITEMS } from "../types";
 
 export const getSliderItems = () => {
   return async (dispatch) => {
@@ -32,6 +32,19 @@ export const getProducts = () => {
     dispatch({
       type: GET_PRODUCTS,
       payload: data,
+    });
+  };
+};
+
+export const getProductById = (id) => {
+  return async (dispatch) => {
+    const ref = doc(db, "products", id);
+    const snapshot = await getDoc(ref);
+    const product = { ...snapshot.data(), id: snapshot.id };
+
+    dispatch({
+      type: GET_PRODUCT_BY_ID,
+      payload: product,
     });
   };
 };
