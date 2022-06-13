@@ -39,9 +39,22 @@ export const Footer = () => {
               <Menu />
             </div>
           </div>
-          <div className='footer__item second'></div>
+          <div className='footer__item-second'>
+            <div className='footer__item-title'>Subscribe to our newsletter</div>
+            <div className='footer__item-second_title'>Be the first to receive special offers and news from us</div>
+            <div className="footer__item-second_search">
+              <form class="footer__item-second_search search">
+                <input type="email" placeholder="email@gmail.com" name="email"/>
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+            <div className='footer__item-second_title'>By clicking on the button, you consent to the processing of personal data and agree to the privacy policy</div>
+          </div>
         </div>
       </div>
+      <p class="cp-text">
+        © Copyright Axel company - 2022
+      </p>
     </div>
   );
 };
