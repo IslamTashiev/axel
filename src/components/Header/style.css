@@ -31,6 +31,11 @@
   line-height: 24px;
   color: #000000;
 }
+.header__menu-item.active {
+  color: #3f79ea;
+  font-weight: 500;
+  border-bottom: 2px solid #3f79ea;
+}
 .header__control {
   display: flex;
   align-items: center;

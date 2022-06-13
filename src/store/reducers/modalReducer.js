@@ -1,8 +1,13 @@
-import { HANDLE_LOGIN_MODAL, HANDLE_SIGNIN_MODAL } from "../types";
+import {
+  HANDLE_LOGIN_MODAL,
+  HANDLE_SEARCH_MODAL,
+  HANDLE_SIGNIN_MODAL,
+} from "../types";
 
 const INITIAL_STATE = {
   signinModal: false,
   loginModal: false,
+  searchModal: false,
 };
 
 export const modalReducer = (state = INITIAL_STATE, action) => {
@@ -16,6 +21,11 @@ export const modalReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loginModal: !state.loginModal,
+      };
+    case HANDLE_SEARCH_MODAL:
+      return {
+        ...state,
+        searchModal: !state.searchModal,
       };
 
     default:

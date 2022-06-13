@@ -18,6 +18,9 @@
   visibility: hidden;
   transition: 0.3s all ease;
 }
+.window.search {
+  align-items: flex-start;
+}
 .modal__window {
   max-width: 400px;
   width: 100%;
@@ -27,6 +30,11 @@
   padding: 35px 50px;
   transform: scale(0);
   transition: 0.3s all ease;
+}
+.modal__window.searchbar {
+  max-width: 1230px;
+  padding: 22px 50px;
+  border-radius: 0 0 10px 10px;
 }
 .window.active .modal__window {
   transform: scale(1);
@@ -66,4 +74,13 @@
   width: 100%;
   position: fixed;
   height: 100vh;
+}
+.search__form {
+  display: flex;
+  gap: 15px;
+}
+.search__btn {
+  max-width: 150px;
+  display: flex;
+  justify-content: center;
 }

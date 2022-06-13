@@ -12,6 +12,7 @@ import {
   GET_PRODUCT_BY_ID,
   GET_SLIDER_ITEMS,
   HANDLE_LOGIN_MODAL,
+  HANDLE_SEARCH_MODAL,
   HANDLE_SIGNIN_MODAL,
 } from "../types";
 
@@ -69,5 +70,10 @@ export const handleChangeSigninModal = () => {
 export const handleChangeLoginModal = () => {
   return {
     type: HANDLE_LOGIN_MODAL,
+  };
+};
+export const handleChangeSearchModal = () => {
+  return {
+    type: HANDLE_SEARCH_MODAL,
   };
 };
