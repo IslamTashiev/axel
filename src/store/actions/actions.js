@@ -7,7 +7,13 @@ import {
   query,
 } from "firebase/firestore";
 import { db } from "../../firebase/config";
-import { GET_PRODUCTS, GET_PRODUCT_BY_ID, GET_SLIDER_ITEMS } from "../types";
+import {
+  GET_PRODUCTS,
+  GET_PRODUCT_BY_ID,
+  GET_SLIDER_ITEMS,
+  HANDLE_LOGIN_MODAL,
+  HANDLE_SIGNIN_MODAL,
+} from "../types";
 
 export const getSliderItems = () => {
   return async (dispatch) => {
@@ -53,5 +59,15 @@ export const getProductById = (id) => {
       type: GET_PRODUCT_BY_ID,
       payload: product,
     });
+  };
+};
+export const handleChangeSigninModal = () => {
+  return {
+    type: HANDLE_SIGNIN_MODAL,
+  };
+};
+export const handleChangeLoginModal = () => {
+  return {
+    type: HANDLE_LOGIN_MODAL,
   };
 };

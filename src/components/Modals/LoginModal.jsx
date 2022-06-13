@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   handleChangeLoginModal,
   handleChangeSigninModal,
@@ -8,10 +8,10 @@ import { Button } from "../Button/Button";
 import { GoogleContinue } from "../Input/GoogleContinue";
 import { Input } from "../Input/Input";
 
-export const SigninModal = () => {
+export const LoginModal = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signinModal } = useSelector((state) => state.modal);
+  const { loginModal } = useSelector((state) => state.modal);
   const dispatch = useDispatch();
 
   const swithModals = () => {
@@ -20,24 +20,24 @@ export const SigninModal = () => {
   };
 
   return (
-    <div className={`window ${signinModal ? "active" : ""}`}>
+    <div className={`window ${loginModal ? "active" : ""}`}>
       <div
-        onClick={() => dispatch(handleChangeSigninModal())}
+        onClick={() => dispatch(handleChangeLoginModal())}
         className='modal__closer'></div>
       <div className='modal__window'>
-        <div className='modal__title'>Sign up</div>
+        <div className='modal__title'>Login</div>
         <form className='modal__form'>
-          <Input label='Your email*' value={email} changer={setEmail} />
+          <Input value={email} changer={setEmail} label='Your email*' />
           <Input
-            label='Your password*'
             value={password}
             changer={setPassword}
+            label='Your password*'
           />
           <GoogleContinue />
-          <Button text='Sign up' />
+          <Button text='Login' />
         </form>
         <div className='form__footer'>
-          Not regitered? <span onClick={swithModals}>Create an account</span>
+          Have an account? <span onClick={swithModals}>Login</span>
         </div>
       </div>
     </div>
