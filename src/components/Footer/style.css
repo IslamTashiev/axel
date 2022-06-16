@@ -1,14 +1,11 @@
 .footer {
-  padding: 25px 0;
+  padding: 25px 0 0 0;
   background: #3f79ea;
   margin-top: 70px;
 }
 .footer__content {
   display: flex;
   justify-content: space-between;
-}
-.footer__item {
-  width: 50%;
 }
 .footer__item-info {
   display: flex;
@@ -41,13 +38,16 @@
   letter-spacing: 0.02em;
   color: #ffffff;
 }
-.footer__item-nav {
-  max-width: 280px;
-  width: 100%;
+.footer__item-nav, .footer__item-second {
   margin-top: 20px;
   margin-right: 20px;
 }
 .footer__item-nav .footer__item-title {
+  border-bottom: 2px solid white;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.footer__item-second .footer__item-title {
   border-bottom: 2px solid white;
   margin-bottom: 20px;
 }
@@ -66,9 +66,85 @@
 .footer__item.first {
   display: flex;
   justify-content: space-between;
+  gap: 140px;
 }
 .footer__links {
   display: flex;
   gap: 10px;
   align-items: center;
+}
+
+.footer__item-second_title{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  max-width: 450px;
+}
+.footer__item-second_search{
+  margin: 10px 0;
+}
+form.search input[type=email] {
+  padding: 15px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  color: #F0F0F0;
+  width: 70%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px 0 0 10px;
+  border: none;
+}
+
+form.search button {
+  background: #BECEF8;
+  border-radius: 10px;
+  width: 30%;
+  padding: 16px;
+  font-size: 17px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: #1C6DCD;
+  border: none;
+  margin-left: -15px;
+}
+
+form.search::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.cp-text{
+  color: rgba(0,0,0,.7);
+  background: rgba(63, 121, 234, 0.9);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 27px;
+  padding: 10px 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer__item.first {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .footer__content {
+    flex-direction: column;
+  }
+  form.search button {
+    padding: 16px 10px;
+  }
 }
