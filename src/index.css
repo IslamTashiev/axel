@@ -16,3 +16,19 @@
   justify-content: space-between;
   height: 100vh;
 }
+body.blocked {
+  overflow: hidden;
+}
+body.unblocked {
+  overflow: auto;
+}
+::-webkit-scrollbar {
+  position: absolute;
+  left: 0;
+  width: 5px;
+  background-color: #c2c2c2;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(68, 59, 114);
+  border-radius: 10px;
+}

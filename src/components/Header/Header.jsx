@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useDispatch } from "react-redux";
+import { authContext } from "../../context/authContext";
 import {
   handleChangeLoginModal,
   handleChangeSigninModal,
@@ -12,6 +13,7 @@ import "./style.css";
 
 export const Header = () => {
   const dispatch = useDispatch();
+  const { logout } = useContext(authContext);
 
   return (
     <div className='header'>

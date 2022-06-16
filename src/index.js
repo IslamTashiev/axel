@@ -7,15 +7,18 @@ import App from "./App";
 import "./index.css";
 import { Routes } from "./Routes";
 import { Modals } from "./components/Modals/Modals";
+import { AuthContextProvider } from "./context/authContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <Routes>
-        <App />
-        <Modals />
-      </Routes>
+      <AuthContextProvider>
+        <Routes>
+          <App />
+          <Modals />
+        </Routes>
+      </AuthContextProvider>
     </BrowserRouter>
   </Provider>,
 );
