@@ -1,4 +1,9 @@
-import { signInWithPopup, signOut } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
 import React, { createContext } from "react";
 import { auth, provider } from "../firebase/config";
 
@@ -24,9 +29,30 @@ export const AuthContextProvider = ({ children }) => {
         console.log(err.message);
       });
   };
+  const login = async (email, password) => {
+    try {
+      const response = await signInWithEmailAndPassword(auth, email, password);
+      console.log("Hello " + response.user.email);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+  const createUser = async (email, password) => {
+    try {
+      const response = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password,
+      );
+      console.log("Ceated user " + response.user.displayName);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
 
   return (
-    <authContext.Provider value={{ loginWithGoogle, logout }}>
+    <authContext.Provider
+      value={{ loginWithGoogle, logout, login, createUser }}>
       {children}
     </authContext.Provider>
   );

@@ -6,9 +6,9 @@ export const GoogleContinue = () => {
   const { loginWithGoogle } = useContext(authContext);
 
   return (
-    <div onClick={loginWithGoogle} className='continue'>
+    <div className='continue'>
       <h4 className='continue__title'>Or continue with</h4>
-      <div className='continue__btn'>
+      <div onClick={loginWithGoogle} className='continue__btn'>
         <img src={googleIcon} alt='icon' />
         <p>Continue with Google</p>
       </div>

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { authContext } from "../../context/authContext";
 import {
   handleChangeLoginModal,
   handleChangeSigninModal,
@@ -12,11 +14,19 @@ export const SigninModal = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { signinModal } = useSelector((state) => state.modal);
+  const { createUser } = useContext(authContext);
   const dispatch = useDispatch();
 
   const swithModals = () => {
     dispatch(handleChangeLoginModal());
     dispatch(handleChangeSigninModal());
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await createUser(email, password);
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -26,10 +36,10 @@ export const SigninModal = () => {
         className='modal__closer'></div>
       <div className='modal__window'>
         <div className='modal__title'>Sign up</div>
-        <form className='modal__form'>
+        <form onSubmit={handleSubmit} className='modal__form'>
           <Input label='Your email*' value={email} changer={setEmail} />
           <Input
-            label='Your password*'
+            label='Create password*'
             value={password}
             changer={setPassword}
           />

@@ -38,7 +38,8 @@
   letter-spacing: 0.02em;
   color: #ffffff;
 }
-.footer__item-nav, .footer__item-second {
+.footer__item-nav,
+.footer__item-second {
   margin-top: 20px;
   margin-right: 20px;
 }
@@ -74,7 +75,7 @@
   align-items: center;
 }
 
-.footer__item-second_title{
+.footer__item-second_title {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -83,25 +84,33 @@
   color: #ffffff;
   max-width: 450px;
 }
-.footer__item-second_search{
+.footer__item-second_search {
   margin: 10px 0;
 }
-form.search input[type=email] {
+form.search input[type="email"] {
   padding: 15px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
   letter-spacing: 0.02em;
-  color: #F0F0F0;
+  color: #f0f0f0;
   width: 70%;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px 0 0 10px;
   border: none;
+  outline: none;
+}
+form.search input[type="email"]::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #f0f0f0;
 }
 
 form.search button {
-  background: #BECEF8;
+  background: #becef8;
   border-radius: 10px;
   width: 30%;
   padding: 16px;
@@ -111,7 +120,7 @@ form.search button {
   font-weight: 500;
   font-size: 16px;
   line-height: 120%;
-  color: #1C6DCD;
+  color: #1c6dcd;
   border: none;
   margin-left: -15px;
 }
@@ -122,14 +131,14 @@ form.search::after {
   display: table;
 }
 
-.cp-text{
-  color: rgba(0,0,0,.7);
+.cp-text {
+  color: rgba(0, 0, 0, 0.7);
   background: rgba(63, 121, 234, 0.9);
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 120%;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   margin-top: 27px;
   padding: 10px 0;

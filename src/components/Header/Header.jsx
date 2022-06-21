@@ -1,19 +1,14 @@
-import React, { useContext } from "react";
-import { useDispatch } from "react-redux";
-import { authContext } from "../../context/authContext";
-import {
-  handleChangeLoginModal,
-  handleChangeSigninModal,
-} from "../../store/actions/actions";
-import { Button } from "../Button/Button";
+import React from "react";
+import { useUser } from "../../hooks/useUser";
 import { Logo } from "../Logo/Logo";
+import { Control } from "./Control";
 import { Menu } from "./Menu";
 import { Nav } from "./Nav";
+import { UserInfo } from "./UserInfo";
 import "./style.css";
 
 export const Header = () => {
-  const dispatch = useDispatch();
-  const { logout } = useContext(authContext);
+  const user = useUser();
 
   return (
     <div className='header'>
@@ -21,21 +16,8 @@ export const Header = () => {
         <div className='header__content'>
           <Logo />
           <Menu />
-          <div className='header__control'>
-            <div className='auth__method'>
-              <div
-                onClick={() => dispatch(handleChangeLoginModal())}
-                className='login'>
-                Login
-              </div>
-              or
-              <Button
-                click={() => dispatch(handleChangeSigninModal())}
-                text='Sign up'
-                defaultClassName='signin'
-              />
-            </div>
-          </div>
+          {user && <UserInfo />}
+          {!user && <Control />}
         </div>
       </div>
       <Nav />
