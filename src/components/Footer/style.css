@@ -153,6 +153,9 @@ form.search::after {
   .footer__content {
     flex-direction: column;
   }
+  .footer__item-info{
+    flex-direction: column;
+  }
   form.search button {
     padding: 16px 10px;
   }

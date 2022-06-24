@@ -11,3 +11,13 @@
   margin-top: 60px;
   margin-bottom: 20px;
 }
+
+@media screen and (max-width: 600px) {
+  .section__title {
+    padding: 10px 60px;
+    font-size: 22px;
+    line-height: 90%;
+    margin-top: 30px;
+    text-align: center;
+  }
+}

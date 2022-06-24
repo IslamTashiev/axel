@@ -162,3 +162,9 @@
   background-color: #ff4c4c;
   color: #fff;
 }
+
+@media screen and (max-width:500px) {
+  .catalog__btn {
+    width: 200px;
+  }
+}

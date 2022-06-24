@@ -36,3 +36,9 @@
   transition: all 0.3s ease;
   transform: translateX(5px);
 }
+
+@media screen and (max-width: 600px) {
+  .btn {
+    padding: 8px 15px;
+  }
+}

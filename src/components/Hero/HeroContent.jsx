@@ -28,7 +28,7 @@ export const HeroContent = (props) => {
           />
         </div>
       </div>
-      <div className='hero__info'>
+      <div className='hero__info-two'>
         <img className='hero__product-image' src={slide.imageURL} />
       </div>
     </div>
