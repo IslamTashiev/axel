@@ -7,6 +7,7 @@ import "./style.css";
 
 export const DetailProduct = () => {
   const { detailProduct } = useSelector((state) => state.data);
+
   return (
     <div className='detail__page'>
       <div className='container'>

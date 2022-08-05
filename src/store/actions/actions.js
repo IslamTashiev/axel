@@ -1,15 +1,20 @@
 import {
+  addDoc,
   collection,
   doc,
   getDoc,
   getDocs,
   orderBy,
   query,
+  where,
 } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import {
+  CLOSE_ALL_MODALS,
+  CREATE_REVIEW,
   GET_PRODUCTS,
   GET_PRODUCT_BY_ID,
+  GET_PRODUCT_REVIEWS,
   GET_SLIDER_ITEMS,
   HANDLE_LOGIN_MODAL,
   HANDLE_SEARCH_MODAL,
@@ -62,6 +67,39 @@ export const getProductById = (id) => {
     });
   };
 };
+
+export const getProductReviews = (productId) => {
+  return async (dispatch) => {
+    const q = query(
+      collection(db, "feedbacks"),
+      orderBy("createdAt"),
+      where("productID", "==", productId),
+    );
+    const reviewsSnapshot = await getDocs(q);
+
+    const data = reviewsSnapshot.docs.map((item) => ({
+      ...item.data(),
+      id: item.id,
+    }));
+
+    dispatch({
+      type: GET_PRODUCT_REVIEWS,
+      payload: data,
+    });
+  };
+};
+export const createReview = (review) => {
+  return async (dispatch) => {
+    const ref = collection(db, "feedbacks");
+    await addDoc(ref, review);
+
+    dispatch({
+      type: CREATE_REVIEW,
+      payload: review,
+    });
+  };
+};
+
 export const handleChangeSigninModal = () => {
   return {
     type: HANDLE_SIGNIN_MODAL,
@@ -75,5 +113,11 @@ export const handleChangeLoginModal = () => {
 export const handleChangeSearchModal = () => {
   return {
     type: HANDLE_SEARCH_MODAL,
+  };
+};
+
+export const closeAllModals = () => {
+  return {
+    type: CLOSE_ALL_MODALS,
   };
 };

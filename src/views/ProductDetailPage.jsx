@@ -5,13 +5,14 @@ import { DetailProduct } from "../components/DetailProduct/DetailProduct";
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "../components/Header/Header";
 import { ProductList } from "../components/Product/ProductList";
-import { getProductById } from "../store/actions/actions";
+import { getProductById, getProductReviews } from "../store/actions/actions";
 
 export const ProductDetailPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(getProductReviews(id));
     dispatch(getProductById(id));
   }, []);
 

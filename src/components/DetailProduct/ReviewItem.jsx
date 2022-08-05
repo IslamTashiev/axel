@@ -1,21 +1,12 @@
 import React from "react";
-import useIcon from "../../assets/profile.png";
 
-export const ReviewItem = () => {
+export const ReviewItem = ({ review }) => {
   return (
     <div className='review__list-item'>
-      <img className='current__user-icon' src={useIcon} />
+      <img className='current__user-icon' src={review.author.photo} />
       <div className='single__review-info'>
-        <h3 className='review__author'>User Name</h3>
-        <p className='review__text'>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero,
-          tenetur rerum id ratione aperiam quasi. Ab aperiam saepe totam
-          deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
-          repudiandae. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Vero, tenetur rerum id ratione aperiam quasi. Ab aperiam saepe totam
-          deleniti. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
-          repudiandae.
-        </p>
+        <h3 className='review__author'>{review.author.name}</h3>
+        <p className='review__text'>{review.text}</p>
       </div>
     </div>
   );

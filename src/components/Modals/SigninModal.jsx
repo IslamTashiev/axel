@@ -13,6 +13,7 @@ import { Input } from "../Input/Input";
 export const SigninModal = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const { signinModal } = useSelector((state) => state.modal);
   const { createUser } = useContext(authContext);
   const dispatch = useDispatch();
@@ -24,9 +25,10 @@ export const SigninModal = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createUser(email, password);
+    await createUser(email, password, name);
     setEmail("");
     setPassword("");
+    setName("");
   };
 
   return (
@@ -38,6 +40,7 @@ export const SigninModal = () => {
         <div className='modal__title'>Sign up</div>
         <form onSubmit={handleSubmit} className='modal__form'>
           <Input label='Your email*' value={email} changer={setEmail} />
+          <Input label='Enter your name*' value={name} changer={setName} />
           <Input
             label='Create password*'
             value={password}

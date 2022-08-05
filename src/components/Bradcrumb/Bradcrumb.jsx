@@ -4,10 +4,10 @@ import "./style.css";
 
 export const Bradcrumb = ({ items, char }) => {
   const location = useLocation();
-  console.log(location.state + "=> state");
-  console.log(location.hash + "=> hash");
-  console.log(location.key + "=> key");
-  console.log(location.search + "=> search");
+  // console.log(location.state + "=> state");
+  // console.log(location.hash + "=> hash");
+  // console.log(location.key + "=> key");
+  // console.log(location.search + "=> search");
 
   return (
     <ul className='bradcrumbs'>
